@@ -56,7 +56,7 @@ def update_launcher():
                 for data in response.iter_content(chunk_size=chunk_size):
                     file.write(data)
 
-        response = requests.get(github_api_mods_url)
+        response = requests.get(github_api_plugins_url)
         if response.status_code == 200:
             files = response.json()
             downloaded_files = 0
