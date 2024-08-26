@@ -122,9 +122,9 @@ def update_launcher():
     resourcepack_directory = os.path.join(minecraft_directory, 'servers')
     os.makedirs(resourcepack_directory, exist_ok=True)
 
-    github_api_mods_url = "https://api.github.com/repos/clousck/Perukalauncher/contents/resources/mods"
+    github_api_mods_url = "https://api.github.com/repos/clousck/Perukaland/contents/mods"
     github_api_resourcepack_url = "https://api.github.com/repos/clousck/Perukalauncher/contents/resources/resourcepack"
-    github_api_serverconfig_url = "https://api.github.com/repos/clousck/Perukalauncher/contents/resources/server"
+    #github_api_serverconfig_url = "https://api.github.com/repos/clousck/Perukalauncher/contents/resources/server"
     
     def download_mods():
         def download_mod(file_url, file_path):
@@ -302,14 +302,14 @@ def show_gui():
 user_os = os.getenv('USER') or os.getenv('USERNAME')
 #Set directory depending on the OS
 if platform.system() == "Windows":
-    minecraft_directory = f"C://Users//{user_os}//AppData//Roaming//.perukalauncher"
+    minecraft_directory = f"C:/Users//{user_os}//AppData//Roaming//.perukalauncher"
 else:
     minecraft_directory = f"/home/{user_os}/.perukalauncher"
 
 #Get versions already installed
 versions = minecraft_launcher_lib.utils.get_installed_versions(minecraft_directory)
 
-if check_installation():
+if True: #check_installation()
     versions = minecraft_launcher_lib.utils.get_installed_versions(minecraft_directory)
     
     options = deserialize_options()
